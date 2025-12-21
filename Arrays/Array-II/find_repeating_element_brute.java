@@ -6,13 +6,25 @@
 
 class FindRepeatingBrute {
     public static int findRepeating(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
+         int n = arr.length;
+
+        System.out.print("Repeating elements: ");
+
+        for (int i = 0; i < n; i++) {
+            boolean isRepeated = false;
+
+            // Check if arr[i] appears again
+            for (int j = i + 1; j < n; j++) {
                 if (arr[i] == arr[j]) {
-                    return arr[i];
+                    isRepeated = true;
+                    break;
                 }
             }
+
+            // Print only once
+            if (isRepeated) {
+                System.out.print(arr[i] + " ");
+            }
         }
-        return -1;
     }
 }
