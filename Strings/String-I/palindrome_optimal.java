@@ -5,13 +5,18 @@
 
 class PalindromeOptimal {
     static boolean isPalindrome(String s) {
-        int l = 0, r = s.length() - 1;
+          int l = 0, r = s.length() - 1;
+
         while (l < r) {
-            if (s.charAt(l) != s.charAt(r)) return false;
+            while (l < r && !Character.isLetterOrDigit(s.charAt(l))) l++;
+            while (l < r && !Character.isLetterOrDigit(s.charAt(r))) r--;
+
+             // we Convert both characters to lowercase and then compare
+            if (Character.toLowerCase(s.charAt(l)) != Character.toLowerCase(s.charAt(r))) return false;
+
             l++;
-            r--;
+             r--;
         }
-      
         return true;
     }
 }
