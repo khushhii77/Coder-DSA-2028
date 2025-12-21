@@ -16,7 +16,6 @@ class MajorityElementMoore {
             else
               count--;
         }
-
         // now we will verify bcoz First loop may still pick some ans, but it’s not guaranteed majority.
         count = 0;
         for (int x : arr)
