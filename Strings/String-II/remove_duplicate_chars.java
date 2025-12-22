@@ -18,5 +18,6 @@ class RemoveDuplicateBrute {
                 ans += s.charAt(i);
         }
         return ans;
+        
     }
 }
