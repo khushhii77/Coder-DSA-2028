@@ -1,0 +1,26 @@
+// Topic: Matrix II
+// Problem: Row With Maximum Ones
+// Description: Find the row index having maximum number of 1s.
+// Approach: Brute Force Counting
+// Time Complexity: O(m*n)
+// Space Complexity: O(1)
+
+class RowWithMaximumOnes {
+    public int[] rowAndMaximumOnes(int[][] mat) {
+        int maxRow = 0;
+        int maxCount = 0;
+
+        for (int i = 0; i < mat.length; i++) {
+            int count = 0;
+            for (int j = 0; j < mat[i].length; j++) {
+                if (mat[i][j] == 1)
+                    count++;
+            }
+            if (count > maxCount) {
+                maxCount = count;
+                maxRow = i;
+            }
+        }
+        return new int[]{maxRow, maxCount};
+    }
+}
