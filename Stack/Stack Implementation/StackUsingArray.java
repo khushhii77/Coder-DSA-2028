@@ -26,4 +26,5 @@ class StackUsingArray {
     int peek(){
         return arr[top];
     }
+    
 }
